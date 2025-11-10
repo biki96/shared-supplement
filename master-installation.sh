@@ -6,6 +6,7 @@ set -e
 ./install-zsh.sh
 ./install-zsh-plugins.sh
 ./install-eza.sh
+./install-vivid.sh
 ./install-uv.sh
 #./install-asdf.sh
 #./install-nodejs.sh
