@@ -19,25 +19,22 @@ cd ~
 if [ -d "$REPO_NAME" ]; then
     echo "Repository '$REPO_NAME' already exists. Skipping clone"
 else
-    git clone "$REPO_URL"
+    if ! git clone "$REPO_URL"; then
+        echo "Failed to clone the repository."
+        exit 1
+    fi
 fi
 
-# Check if the clone was successful
-if [ $? -eq 0 ]; then
-    echo "Removing old configs"
-    rm -rf ~/.config/nvim \
-           ~/.config/starship.toml \
-           ~/.local/share/nvim \
-           ~/.cache/nvim
+echo "Removing old configs"
+rm -rf ~/.config/nvim \
+       ~/.config/starship.toml \
+       ~/.local/share/nvim \
+       ~/.cache/nvim
 
-    cd "$REPO_NAME"
+cd "$REPO_NAME"
 
-    stow ghostty
-    stow tmux
-    stow nvim
-    stow starship
-else
-    echo "Failed to clone the repository."
-    exit 1
-fi
+stow ghostty
+stow tmux
+stow nvim
+stow starship
 

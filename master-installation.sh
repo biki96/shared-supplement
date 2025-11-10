@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 # Install all packages in order
 ./install-zsh.sh

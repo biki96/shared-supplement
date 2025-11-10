@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -e
+
 # Check if zsh is installed
 if ! command -v zsh &>/dev/null; then
-    echo "Zsh is not installed. Please run ./install-packages.sh first."
+    echo "Zsh is not installed. Please run ./install-zsh.sh first."
     exit 1
 fi
 
