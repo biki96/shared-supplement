@@ -19,6 +19,13 @@ cd ~
 if [ -d "$REPO_NAME" ]; then
     echo "Repository '$REPO_NAME' already exists. Pulling latest changes..."
     cd "$REPO_NAME"
+
+    # Stash any local changes before pulling
+    if ! git diff-index --quiet HEAD --; then
+        echo "Stashing local changes..."
+        git stash
+    fi
+
     if ! git pull; then
         echo "Failed to pull latest changes. Continuing anyway..."
     fi
@@ -36,10 +43,16 @@ rm -rf ~/.config/nvim \
        ~/.local/share/nvim \
        ~/.cache/nvim
 
+# Backup and remove existing configs that would conflict with stow
+if [ -f ~/.config/ghostty/config ] && [ ! -L ~/.config/ghostty/config ]; then
+    echo "Backing up existing ghostty config..."
+    mv ~/.config/ghostty/config ~/.config/ghostty/config.backup-$(date +%Y%m%d-%H%M%S)
+fi
+
 cd "$REPO_NAME"
 
 stow ghostty
-stow tmux
+stow tnux
 stow nvim
 stow starship
 
