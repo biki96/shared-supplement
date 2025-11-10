@@ -5,6 +5,7 @@ set -e
 # Install all packages in order
 ./install-zsh.sh
 ./install-zsh-plugins.sh
+./install-uv.sh
 #./install-asdf.sh
 #./install-nodejs.sh
 
