@@ -5,14 +5,9 @@ set -e
 # Install mise (polyglot runtime manager)
 echo "Installing mise..."
 
-# Check if mise is already installed
-if command -v mise &>/dev/null; then
-    echo "mise is already installed. Updating..."
-    mise self-update
-else
-    echo "Installing mise via AUR..."
-    yay -S --noconfirm --needed mise
-fi
+# Install or update mise via AUR
+echo "Installing/updating mise via AUR..."
+yay -S --noconfirm --needed mise
 
 # Verify installation
 if ! command -v mise &>/dev/null; then
