@@ -17,7 +17,12 @@ cd ~
 
 # Check if the repository already exists
 if [ -d "$REPO_NAME" ]; then
-    echo "Repository '$REPO_NAME' already exists. Skipping clone"
+    echo "Repository '$REPO_NAME' already exists. Pulling latest changes..."
+    cd "$REPO_NAME"
+    if ! git pull; then
+        echo "Failed to pull latest changes. Continuing anyway..."
+    fi
+    cd ~
 else
     if ! git clone "$REPO_URL"; then
         echo "Failed to clone the repository."
