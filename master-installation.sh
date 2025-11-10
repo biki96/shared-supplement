@@ -8,6 +8,7 @@ set -e
 ./install-eza.sh
 ./install-vivid.sh
 ./install-uv.sh
+./install-mise.sh
 #./install-asdf.sh
 #./install-nodejs.sh
 
