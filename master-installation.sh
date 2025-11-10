@@ -23,3 +23,8 @@ set -e
 ./install-dotfiles.sh
 ./install-hyprland-overrides.sh
 ./set-shell.sh
+
+# Setup workspace structure
+echo ""
+echo "Setting up workspace structure..."
+./setup-workspace.sh
