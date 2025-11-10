@@ -55,4 +55,5 @@ stow ghostty
 stow tnux
 stow nvim
 stow starship
+stow zshrc
 
