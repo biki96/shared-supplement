@@ -10,9 +10,10 @@ set -e
 ./install-ghostty.sh
 ./install-stow.sh
 ./install-vscode.sh
-./install-brave-nightly-bin.sh 
+./install-brave-nightly-bin.sh
 ./install-tmux.sh
 ./install-claude-code.sh
+./install-claude-desktop.sh
 
 ./install-dotfiles.sh
 ./install-hyprland-overrides.sh
