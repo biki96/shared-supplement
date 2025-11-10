@@ -49,6 +49,11 @@ if [ -f ~/.config/ghostty/config ] && [ ! -L ~/.config/ghostty/config ]; then
     mv ~/.config/ghostty/config ~/.config/ghostty/config.backup-$(date +%Y%m%d-%H%M%S)
 fi
 
+if [ -f ~/.zshrc ] && [ ! -L ~/.zshrc ]; then
+    echo "Backing up existing .zshrc..."
+    mv ~/.zshrc ~/.zshrc.backup-$(date +%Y%m%d-%H%M%S)
+fi
+
 cd "$REPO_NAME"
 
 stow ghostty
