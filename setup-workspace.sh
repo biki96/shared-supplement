@@ -19,9 +19,7 @@ declare -a DIRECTORIES=(
     "personal"
 
     # Products - active product development
-    "products/ai"
-    "products/tools"
-    "products/platforms"
+    "products"
 
     # Research - research and learning projects
     "research/generative_ai"
@@ -77,11 +75,6 @@ cat > "$WORK_ROOT/products/README.md" << 'EOF'
 # Products
 
 Active product development and applications.
-
-## Categories
-- **ai/**: AI-powered products and applications
-- **tools/**: Developer tools and utilities
-- **platforms/**: Platform projects
 
 ## Guidelines
 - Each product should have its own directory

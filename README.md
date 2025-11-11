@@ -29,6 +29,9 @@ cd supplement
 - `install-claude-code.sh` - Claude Code CLI
 - `install-claude-desktop.sh` - Claude Desktop app
 
+### Security
+- `install-proton-pass.sh` - Proton Pass (password manager)
+
 ### System
 - `install-stow.sh` - GNU Stow (dotfiles manager)
 - `install-brave-nightly-bin.sh` - Brave browser (nightly)

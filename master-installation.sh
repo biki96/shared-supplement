@@ -57,6 +57,7 @@ run_install "install-brave-nightly-bin.sh" "Brave Browser"
 run_install "install-tmux.sh" "tmux"
 run_install "install-claude-code.sh" "Claude Code"
 run_install "install-claude-desktop.sh" "Claude Desktop"
+run_install "install-proton-pass.sh" "Proton Pass"
 
 # Configuration
 run_install "install-dotfiles.sh" "Dotfiles"
