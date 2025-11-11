@@ -66,3 +66,33 @@ experimental = true
 EOF
 
 echo "mise configured to work with uv!"
+
+# Install Node.js latest
+echo ""
+echo "Installing Node.js latest with mise..."
+if command -v mise &>/dev/null || [ -f "$HOME/.local/bin/mise" ]; then
+    MISE_CMD=$(command -v mise || echo "$HOME/.local/bin/mise")
+
+    # Install Node.js latest
+    if $MISE_CMD use -g node@latest; then
+        echo "✓ Node.js latest installed successfully!"
+        $MISE_CMD exec -- node --version
+    else
+        echo "✗ Failed to install Node.js latest"
+    fi
+
+    # Install pnpm latest
+    echo ""
+    echo "Installing pnpm latest with mise..."
+    if $MISE_CMD use -g pnpm@latest; then
+        echo "✓ pnpm latest installed successfully!"
+        $MISE_CMD exec -- pnpm --version
+    else
+        echo "✗ Failed to install pnpm latest"
+    fi
+else
+    echo "✗ mise not found, skipping Node.js and pnpm installation"
+fi
+
+echo ""
+echo "✅ mise setup complete!"
